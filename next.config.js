@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+  basePath: '/pycoach-nextjs',
+  assetPrefix: '/pycoach-nextjs/',
   reactStrictMode: true,
   swcMinify: true,
   images: {
