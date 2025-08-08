@@ -1,10 +1,13 @@
 /** @type {import('next').NextConfig} */
+const repoName = 'pycoach-nextjs';
+const isCustomDomain = process.env.CUSTOM_DOMAIN === 'true';
 
 const nextConfig = {
-  basePath: '/pycoach-nextjs',
-  assetPrefix: '/pycoach-nextjs/',
   reactStrictMode: true,
   swcMinify: true,
+  output: 'export',
+  basePath: isCustomDomain ? '' : `/${repoName}`,
+  assetPrefix: isCustomDomain ? '' : `/${repoName}/`,
   images: {
     domains: ["localhost"],
     remotePatterns: [
